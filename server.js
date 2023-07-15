@@ -1,9 +1,9 @@
-const { request } = require('express')
 const express = require('express') 
 const app = express()
 const PORT = 8005
+const cors = require('cors')
 
-
+app.use(cors())
 
 const rappers = {
     1200:{
