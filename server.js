@@ -6,7 +6,7 @@ const cors = require('cors')
 app.use(cors())
 
 const rappers = {
-    1200:{
+    'twleve':{
         'brekky': ['1 sausage mcmuffin, 1 sausage mcmuffin with egg, fruit & maple oatmeal', '40 protein', 'brekky'],
         'affordable': ['3 mcdoubles', '66 protein', 'affordable'],
         'healtier': ['3 mcchickens', '42 protein', 'healtierish']
