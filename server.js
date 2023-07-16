@@ -5,11 +5,11 @@ const cors = require('cors')
 
 app.use(cors())
 
-const rappers = {
+const calories = {
     1200:{
         'brekky': ['1 sausage mcmuffin, 1 sausage mcmuffin with egg, fruit & maple oatmeal', '40 protein', 'brekky'],
         'affordable': ['3 mcdoubles', '66 protein', 'high protein'],
-        'healtier': ['3 mcchickens', '42 protein', 'healtierish']
+        'healtier': ['3 mcchickens, or 3 spicy mcchickens', '42 protein', 'healtierish']
     },
 
     1000:{
@@ -36,11 +36,11 @@ app.get('/', (request, response) =>{
 })
 
 app.get('/api/:name', (request, response)=>{
-    const rapperName = request.params.name.toLowerCase()
-    if(rappers[rapperName]){
-        response.json(rappers[rapperName])
+    const caloriesName = request.params.name.toLowerCase()
+    if(calories[caloriesName]){
+        response.json(calories[caloriesName])
     }else{
-        response.json(rappers['unknown'])
+        response.json(calories['unknown'])
     }
     
 })
