@@ -13,9 +13,9 @@ const rappers = {
     },
 
     1000:{
-        'brekky': ['1 sausage mcmuffin, 1 sausage mcmuffin with egg, fruit & maple oatmeal', '40 protein', 'brekky'],
-        'affordable': ['3 mcdoubles', '66 protein', 'affordable'],
-        'healtier': ['3 mcchickens', '42 protein', 'healtierish']
+        'brekky': ['1 sausage mcmuffin, fruit & maple oatmeal', '40 protein', 'brekky'],
+        'affordable': ['2 mcdoubles', '66 protein', 'affordable'],
+        'healtier': ['2 mcchickens', '42 protein', 'healtierish']
     },
 
     'unknown':{
