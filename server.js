@@ -13,15 +13,15 @@ const rappers = {
     },
 
     1000:{
-        'brekky': ['1 sausage mcmuffin, fruit & maple oatmeal', '40 protein', 'brekky'],
-        'affordable': ['2 mcdoubles', '66 protein', 'affordable'],
-        'healtier': ['2 mcchickens', '42 protein', 'healtierish']
+        'brekky': ['TODO', '40 protein', 'brekky'],
+        'affordable': ['TODO', '66 protein', 'affordable'],
+        'healtier': ['TODO', '42 protein', 'healtierish']
     },
 
-    'unknown':{
-        'foodName': 'unknown',
-        'protein': 'unknown',
-        'optionType': 'unknown'
+    2000:{
+        'brekky': ['TODO', '40 protein', 'brekky'],
+        'affordable': ['5 mcdoubles', '110 protein', 'affordable'],
+        'healtier': ['5 mcchickens, small fries', '72 protein', 'healtierish']
     }
     
 }
