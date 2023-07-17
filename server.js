@@ -22,6 +22,12 @@ const calories = {
         'brekky': ['TODO', '40 protein', 'brekky'],
         'affordable': ['5 mcdoubles', '110 protein', 'high protein'],
         'healtier': ['5 mcchickens, or 5 spicy mcchickens', '70 protein', 'healtierish']
+    },
+
+    550:{
+        'brekky': ['4 oatmeal packages, 4 tbl spoon pb2, 1cup almond milk', '40 protein', 'brekky'],
+        'affordable': ['5 mcdoubles', '110 protein', 'high protein'],
+        'healtier': ['5 mcchickens, or 5 spicy mcchickens', '70 protein', 'healtierish']
     }
     
 }

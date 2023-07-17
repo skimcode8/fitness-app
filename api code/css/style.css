@@ -16,10 +16,11 @@ body {
   
   button {
     margin-top: 10px;
-    background-color: #FF4500;
-    color: white;
+    background-color: #00b466;
+    color: rgb(253, 253, 253);
     border: none;
     padding: 8px 16px;
+    width: 22%;
     font-size: 16px;
     cursor: pointer;
   }
@@ -28,7 +29,7 @@ body {
     display: block;
     margin: 10px 0;
     padding: 5px;
-    width: 100%;
+    width: 20%;
   }
   
   ul {
