@@ -18,15 +18,21 @@ const calories = {
         'healtier': ['TODO', '42 protein', 'healtierish']
     },
 
+    1400:{
+        'brekky': ['TODO', '105 protein', 'high protein', '1370 calories' ],
+        'affordable': ['30pc nuggets, waffle fries', '105 protein', 'high protein', '1370 calories' ],
+        'healtier': ['2 mcchickens, 1 big mac', '53 protein', 'affordable because u can use mcpoints']
+    },
+
     2000:{
         'brekky': ['TODO', '40 protein', 'brekky'],
         'affordable': ['5 mcdoubles', '110 protein', 'high protein'],
         'healtier': ['5 mcchickens, or 5 spicy mcchickens', '70 protein', 'healtierish']
     },
 
-    simons:{
+    simon:{
         'brekky': ['4 oatmeal packages, 4 tbl spoon pb2, 1cup almond milk', 'todo protein', 'brekky', '550 calories'],
-        'affordable': ['protein shake', '85 protein', 'high protein', '780 calories'],
+        'affordable': ['protein shake', '85 protein', 'high protein', '680 calories'],
         
     }
     
