@@ -25,8 +25,8 @@ const calories = {
     },
 
     simons:{
-        'brekky': ['4 oatmeal packages, 4 tbl spoon pb2, 1cup almond milk', 'todo protein', 'brekky'],
-        'affordable': ['protein shake', '85 protein', 'high protein'],
+        'brekky': ['4 oatmeal packages, 4 tbl spoon pb2, 1cup almond milk', 'todo protein', 'brekky', '550 calories'],
+        'affordable': ['protein shake', '85 protein', 'high protein', '780 calories'],
         
     }
     
