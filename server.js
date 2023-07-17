@@ -24,10 +24,10 @@ const calories = {
         'healtier': ['5 mcchickens, or 5 spicy mcchickens', '70 protein', 'healtierish']
     },
 
-    550:{
-        'brekky': ['4 oatmeal packages, 4 tbl spoon pb2, 1cup almond milk', '40 protein', 'brekky'],
-        'affordable': ['5 mcdoubles', '110 protein', 'high protein'],
-        'healtier': ['5 mcchickens, or 5 spicy mcchickens', '70 protein', 'healtierish']
+    simons:{
+        'brekky': ['4 oatmeal packages, 4 tbl spoon pb2, 1cup almond milk', 'todo protein', 'brekky'],
+        'affordable': ['protein shake', '85 protein', 'high protein'],
+        
     }
     
 }
