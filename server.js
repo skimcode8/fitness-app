@@ -38,6 +38,7 @@ const calories = {
     
 }
 
+//todo add ability to add, 550 + 1000 = 1550
 
 
 
