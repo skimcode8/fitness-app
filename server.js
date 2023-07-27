@@ -3,6 +3,8 @@ const app = express()
 const bodyParser = require('body-parser')
 const PORT = 8005
 const cors = require('cors')
+const MongoClient = require('mongodb').MongoClient
+const connectionString = 'mongodb+srv://skimcode:GT50plxzi3DqURRy@cluster0.nfxqhrd.mongodb.net/?retryWrites=true&w=majority'
 
 app.use(bodyParser.urlencoded({extended: true}))
 
