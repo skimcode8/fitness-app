@@ -7,7 +7,7 @@ const MongoClient = require('mongodb').MongoClient
 const connectionString = 'mongodb+srv://Skimcode:LSuYmpOTsuaWT0xP@cluster0.nfxqhrd.mongodb.net/?retryWrites=true&w=majority'
 app.use(cors())
 
-app.use(bodyParser.urlencoded({extended: true}))
+
 
 
 async function connectToMongoDB() {
@@ -16,24 +16,49 @@ async function connectToMongoDB() {
       console.log('Connected to Database');
       const db = client.db('Fitness-app')
       const macrosCollection = db.collection('foodMacros')
+      app.set('view engine', 'ejs')
+
       app.use(bodyParser.urlencoded({extended: true}))
+      app.use(express.static('public'))
+      app.use(bodyParser.json())
 
     app.get('/', (request, response) =>{
         macrosCollection.find().toArray()
             .then(results => {
-                console.log(results)
+                // console.log(results)
+                response.render('index.ejs',{foodMacros: results})
             })
             .catch(error => console.error(error))
-        response.sendFile(__dirname + '/index.html')
+        
     })
     
     app.post('/macros', (req, res)=> {
         macrosCollection.insertOne(req.body)
             .then(result => {
-                console.log(result)
+                // console.log(result)
                 res.redirect('/')
             })
             .catch(error => console.error(error))
+    })
+
+    app.put('/foodMacros', (req, res)=> {
+        macrosCollection.findOneAndUpdate(
+            {name : 'obi wan'},
+            {
+                $set: {
+                    name: req.body.name,
+                    macros: req.body.quote
+                }
+            },
+            {
+                upsert: true
+            }
+            
+        )
+        .then(result =>{
+            console.log(result)
+        })
+        .catch(error => console.error(error))
     })
   
     app.listen(PORT, ()=>{

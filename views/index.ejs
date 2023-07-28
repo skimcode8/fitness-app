@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>dasds</h1>
+    <form action="/macros" method="POST">
+        <input type="text" placeholder="name" name="name">
+        <input type="text" placeholder="macros" name="macros">
+        <input type="text" placeholder="macros" name="macros">
+        <input type="text" placeholder="category" name="category">
+        <button type="submit">SUBMIT</button>
+    </form>
+    <h2>Quotes</h2>
+    <ul class="foodMacros">
+        <% for(var i = 0; i < foodMacros.length; i++){ %>
+            <li class="foodMacro">
+                <h3>Name: <%= foodMacros[i].name %></h3>
+                <p>Macros: <%= foodMacros[i].macros %></p>
+                <p>Category: <%= foodMacros[i].category %></p>
+            </li>
+        <% } %>
+    </ul>
+
+    <div>
+        <h2>Darth Vadar</h2>
+        <p>Replace the first yoda</p>
+        <button id="update-button">replace yoda</button>
+    </div>
+    <script src="/main.js"></script>
+</body>
+</html>
