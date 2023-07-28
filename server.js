@@ -4,11 +4,52 @@ const bodyParser = require('body-parser')
 const PORT = 8005
 const cors = require('cors')
 const MongoClient = require('mongodb').MongoClient
-const connectionString = 'mongodb+srv://skimcode:GT50plxzi3DqURRy@cluster0.nfxqhrd.mongodb.net/?retryWrites=true&w=majority'
+const connectionString = 'mongodb+srv://Skimcode:LSuYmpOTsuaWT0xP@cluster0.nfxqhrd.mongodb.net/?retryWrites=true&w=majority'
+app.use(cors())
 
 app.use(bodyParser.urlencoded({extended: true}))
 
-app.use(cors())
+
+async function connectToMongoDB() {
+    try {
+      const client = await MongoClient.connect(connectionString);
+      console.log('Connected to Database');
+      const db = client.db('Fitness-app')
+      const macrosCollection = db.collection('foodMacros')
+      app.use(bodyParser.urlencoded({extended: true}))
+
+    app.get('/', (request, response) =>{
+        macrosCollection.find().toArray()
+            .then(results => {
+                console.log(results)
+            })
+            .catch(error => console.error(error))
+        response.sendFile(__dirname + '/index.html')
+    })
+    
+    app.post('/macros', (req, res)=> {
+        macrosCollection.insertOne(req.body)
+            .then(result => {
+                console.log(result)
+                res.redirect('/')
+            })
+            .catch(error => console.error(error))
+    })
+  
+    app.listen(PORT, ()=>{
+        console.log(`the server is now running on port ${PORT}! Betta Go catch it`)
+    })
+    
+
+    } catch (err) {
+      console.error('Error connecting to MongoDB:', err);
+    }
+  }
+  
+  connectToMongoDB();
+
+
+
 
 const calories = {
     1200:{
@@ -43,20 +84,6 @@ const calories = {
     
 }
 
-//todo add ability to add, 550 + 1000 = 1550
-
-
-
-
-
-app.get('/', (request, response) =>{
-    response.sendFile(__dirname + '/index.html')
-})
-
-app.post('/quotes', (req, res)=> {
-    console.log(req.body)
-})
-
 app.get('/api/:name', (request, response)=>{
     const caloriesName = request.params.name.toLowerCase()
     if(calories[caloriesName]){
@@ -67,9 +94,12 @@ app.get('/api/:name', (request, response)=>{
     
 })
 
-app.listen(PORT, ()=>{
-    console.log(`the server is now running on port ${PORT}! Betta Go catch it`)
-})
+//todo add ability to add, 550 + 1000 = 1550
+
+
+
+
+
 
 
 
