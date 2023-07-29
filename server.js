@@ -41,26 +41,29 @@ async function connectToMongoDB() {
             .catch(error => console.error(error))
     })
 
-    app.put('/foodMacros', (req, res)=> {
+    app.put('/foodMacros', (req, res) => {
+        const updateName = req.body.name;
+        const newCalories = req.body.calories;
+        const newMacros = req.body.macros;
+        const newCategory = req.body.category;
+    
         macrosCollection.findOneAndUpdate(
-            {name : ''},
+            { name: updateName },
             {
                 $set: {
-                    name: req.body.name,
-                    macros: req.body.macros
+                    calories: newCalories,
+                    macros: newMacros,
+                    category: newCategory
                 }
             },
-            {
-                upsert: true
-            }
-            
+            { upsert: true }
         )
-        .then(result =>{
-            console.log(result)
-            res.json('Success')
+        .then(result => {
+            console.log(result);
+            res.json('Success');
         })
-        .catch(error => console.error(error))
-    })
+        .catch(error => console.error(error));
+    });
 
     app.delete('/foodMacros', (req, res) => {
         macrosCollection.deleteOne(

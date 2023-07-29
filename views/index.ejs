@@ -15,7 +15,7 @@
         <input type="text" placeholder="category" name="category">
         <button type="submit">SUBMIT</button>
     </form>
-    <h2>Quotes</h2>
+    <h2>Foods</h2>
     <ul class="foodMacros">
         <% for(var i = 0; i < foodMacros.length; i++){ %>
             <li class="foodMacro">
@@ -27,15 +27,21 @@
     </ul>
 
     <div>
-        <h2>Darth Vadar</h2>
-        <p>Replace the first yoda</p>
-        <button id="update-button">replace yoda</button>
+        <h2>replace food</h2>
+        <p>Replace the first food</p>
+        <input type="text" placeholder="name" name="updateName" id="update-name">
+        <input type="text" placeholder="new calories" name="newCalories" id="new-calories">
+        <input type="text" placeholder="new macros" name="newMacros" id="new-macros">
+        <input type="text" placeholder="new category" name="newCategory" id="new-category">
+        <button id="update-button">replace calories/macros/category</button>
     </div>
 
     <div>
-        <h2>remove darth vadar</h2>
-        <p>delete one darth vadar quote</p>
-        <button id="delete-button">delete vadar quote</button>
+        <h2>remove food</h2>
+    
+        <button id="delete-button">delete name</button>
+        <input type="text" placeholder="name" name=req.body.name id="delete-name">
+        
     </div>
     <div id="message"></div>
     <script src="/main.js"></script>
