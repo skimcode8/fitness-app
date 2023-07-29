@@ -43,11 +43,11 @@ async function connectToMongoDB() {
 
     app.put('/foodMacros', (req, res)=> {
         macrosCollection.findOneAndUpdate(
-            {name : 'obi wan'},
+            {name : ''},
             {
                 $set: {
                     name: req.body.name,
-                    macros: req.body.quote
+                    macros: req.body.macros
                 }
             },
             {
@@ -57,6 +57,22 @@ async function connectToMongoDB() {
         )
         .then(result =>{
             console.log(result)
+            res.json('Success')
+        })
+        .catch(error => console.error(error))
+    })
+
+    app.delete('/foodMacros', (req, res) => {
+        macrosCollection.deleteOne(
+            {name: req.body.name}
+            
+        )
+        .then(result => {
+            if(result.deletedCount ===0){
+                return res.json('No quote to delete')
+            }
+            res.json('Deleted darth Vadars quote')
+            
         })
         .catch(error => console.error(error))
     })
